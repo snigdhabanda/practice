@@ -44,7 +44,7 @@ function minChange(coins, amount, memo = {}) {
 
 //1. recursively subtract coin from amount until amount === 0
 //2.push this into an array of numCoins 
-    if (amount in memo) return amount 
+    if (amount in memo) return memo[amount]
     if (amount === 0) return 0
     
     let numCoins = []
