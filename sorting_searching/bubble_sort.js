@@ -22,4 +22,3 @@ var bubbleSort = function(arr){
     return arr
 }
 
-console.log(bubbleSort([8,3,4, -1]))
