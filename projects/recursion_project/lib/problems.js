@@ -122,12 +122,12 @@ function pow(base, exponent) {
 //     3-dimensional array: [[['some data']]]
 function flatten(data) {
     
-    if (!Array.isArray(data)) return [data]
+    if (!Array.isArray(data)) return data
     
     let arr = []
     for (let i = 0; i < data.length; i++){
         let flattened = flatten(data[i])
-        arr.push(...flattened)
+        arr.push(flattened)
     }
    
     return arr
