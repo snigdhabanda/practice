@@ -11,32 +11,45 @@ class BST {
 
    insert(root, val){ 
 
-    if (!this.root){
+    if (!root){
         let newNode = new TreeNode(val)
-        this.root = newNode
+        root = newNode
     }
-    else if(val < this.root.val){
-        if (!this.root.left){
+    else if(val < root.val){
+        if (!root.left){
             let newNode = new TreeNode(val)
-            this.root.left = newNode
+            root.left = newNode
         }
         else{
-            this.insert(this.root.left, val)
+            this.insert(val, root.left)
         }
     }
-    else if (val > this.root){
-        if (!this.root.right){
+    else if (val > root){
+        if (!root.right){
             let newNode = new TreeNode(val)
-            this.root.right = newNode
+            root.right = newNode
         }
         else{
-            this.insert(this.root.right, val)
+            this.insert(root.right, val)
         }
     }
     return this.root 
    }
 }
 
+var searchRecur = function(val, root = this.root){
+    if (!root) return false 
+
+    if (val < root){
+        this.searchRecur(val, root.left)
+    }
+    else if (val > root.val){
+        return this.searchRecur(val, root.right)
+    }
+    else{
+        return root; 
+    }
+}
 module.exports = {
     TreeNode,
     BST
